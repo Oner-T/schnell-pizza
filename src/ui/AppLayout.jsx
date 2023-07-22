@@ -10,7 +10,7 @@ function AppLayout() {
   return (
     <div className="layout">
       {isLoading && <Loader />}
-      <SearchOrder />
+
       <Header />
 
       <main>
