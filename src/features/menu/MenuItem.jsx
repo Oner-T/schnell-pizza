@@ -21,7 +21,7 @@ function MenuItem({ pizza }) {
 
   function handleAddToCart() {
     const newItem = {
-      id: id,
+      pizzaId: id,
       name,
       quantity: 1,
       unitPrice: unitPrice,
@@ -31,7 +31,7 @@ function MenuItem({ pizza }) {
   }
 
   function isItemInCart(id) {
-    return thisCart.some((cartItem) => cartItem.id === id);
+    return thisCart.some((cartItem) => cartItem.pizzaId === id);
   }
 
   return (

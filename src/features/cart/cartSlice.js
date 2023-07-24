@@ -14,16 +14,16 @@ const cartSlice = createSlice({
     },
     deleteItem(state, action) {
       // payload = id
-      state.cart = state.cart.filter((item) => item.id !== action.payload);
+      state.cart = state.cart.filter((item) => item.pizzaId !== action.payload);
     },
     increaseItemQuantity(state, action) {
       // payload = id
-      const item = state.cart.find((item) => item.id === action.payload);
+      const item = state.cart.find((item) => item.pizzaId === action.payload);
       item.quantity++;
       item.totalPrice = item.quantity;
     },
     decreaseItemQQuantity(state, action) {
-      const item = state.cart.find((item) => item.id === action.payload);
+      const item = state.cart.find((item) => item.pizzaId === action.payload);
       if (item.quantity === 0) cartSlice.caseReducers.deleteItem(state, action);
       item.quantity--;
       item.totalPrice = item.quantity;
@@ -54,4 +54,4 @@ export const getTotalCartPrice = (state) =>
 // reselect library for optimizin redux selector
 
 export const getCurrentQuantityById = (id) => (state) =>
-  state.cart.cart.find((item) => item.id === id)?.quantity ?? 0;
+  state.cart.cart.find((item) => item.pizzaId === id)?.quantity ?? 0;
