@@ -4,7 +4,7 @@ import { formatCurrency } from "../../utils/helpers";
 import { addItem, getCurrentQuantityById } from "../cart/cartSlice";
 import DeleteItem from "../cart/DeleteItem";
 import { useEffect, useState } from "react";
-import UpdateItemQuantity from "../cart/updateItemQuantity";
+import UpdateItemQuantity from "../cart/UpdateItemQuantity";
 
 function MenuItem({ pizza }) {
   const cart = useSelector((state) => state.cart.cart);
